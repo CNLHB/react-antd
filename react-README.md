@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
@@ -10,7 +9,7 @@ In the project directory, you can run:
 Runs the app in the development mode-111.<br />
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits............<br />
+The page will reload if you make edits.<br />
 You will also see any lint errors in the console.
 
 ### `yarn test`
@@ -67,7 +66,3 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `yarn build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
-=======
-# react-antd
-学习react使用antd
->>>>>>> 1f7dd71c955c7e9b375f9687b8eb100225aad694
