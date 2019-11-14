@@ -5,21 +5,22 @@ import './style/common.less'
 import Footer from './components/Footer/footer'
 import NavLeft from './components/NavLeft/index'
 import Header from './components/Header/header'
+import Home from './pages/home/index'
 import Content from './components/content/content'
 function App() {
     return (
         <div>
-            <Row className="container">
+            <Row className="container" type="flex">
                 <Col span={4} className="nav-left">
                     <NavLeft/>
                 </Col>
                 <Col span={20} className="main">
                     <Header/>
                     <Row className="content">
-                        {/* <Home/> */}
-                       <Content></Content>
+                        <Home/>
+                       {/* <Content></Content> */}
                     </Row>
-                    <Footer/>
+                    <Footer className="footer"/>
                 </Col>
             </Row>
         </div>
