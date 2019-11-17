@@ -173,3 +173,15 @@ export default class IRouter extends React.Component {
     }
 }
 ```
+首先，我们创建dev分支，然后切换到dev分支：
+
+1、git checkout -b dev   //创建dev分支并切换
+Switched to a new branch 'dev'
+2、相当于下面两条命令
+$ git branch dev
+$ git checkout dev
+Switched to branch 'dev'
+
+
+
+
