@@ -72,3 +72,104 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/tr
 学习react使用antd
 
 >>>>>>> 1f7dd71c955c7e9b375f9687b8eb100225aad694
+### React-Router4.0的使用
+```bash
+1、react-router
+react-router-dom
+react-router-dom核心用法
+2、Router,Route,Link 相当于a标签,NavLink 
+BrowserRouter,HashRouter,Switch,Redreact,Route,Link
+3、HashRouter里面用一个标签包裹
+4、Switch里面的路由，匹配到第一个路由，就不在向下匹配, 
+about === about/1     不精准匹配的话，匹配的about就不在向下匹配
+5、Route: path /exact 精准匹配/ component 匹配后的组件加载/render 
+6、路由配置化，抽离出数据结构，通过map重新遍历
+7、动态路由 <Route path="/:id" component={Home}/>
+取参数，this.props.match.params.id
+
+```
+```js
+<Switch>
+    <Route path="" component={Buttons}></Route>
+</Switch>
+
+                        <HashRouter>
+                         <Route path="/:id" component={Home}/>
+                            {/* <Route path="statements" component={Statements}/> */}
+                         <Route component={NoMatch}/>//404
+                        </HashRouter>
+            <HashRouter>
+                <Route path="/login" component={Login} />
+                <Route path="/admin"
+                    render={()=>
+                        <Admin></Admin>   
+                    }
+                />
+             </HashRouter>
+
+```
+```js
+    // 路由配置文件
+    // admin.js
+import React from 'react'
+import Footer from '../../components/Footer/footer'
+import NavLeft from '../../components/NavLeft/index'
+import Header from '../../components/Header/header'
+import Content from '../../components/content/content'
+import { Row, Col } from 'antd'
+import '../../style/common.less'
+export default class Admin extends React.Component {
+
+    render() {
+        console.log(this.props.children)
+        return (
+            <div>
+                <Row className="container" type="flex">
+                    <Col span={4} className="nav-left">
+                        <NavLeft />
+                    </Col>
+                    <Col span={20} className="main">
+                        <Header />
+                        <Row className="content">
+                         {this.props.children}
+                            {/* <HashRouter>
+                                <div>
+                                    <Route path="/admin/button" component={Home}></Route>
+                                    <Route path="/life" component={Life}></Route>
+                                </div>
+                            </HashRouter> */}
+                        </Row>
+                        <Footer className="footer" />
+                    </Col>
+                </Row>
+            </div>
+        )
+    }
+}
+
+
+// router.js
+import { HashRouter, Route, Link, Switch } from 'react-router-dom'
+import React from 'react'
+import Login from '../pages/login'
+import Admin from '../pages/admin'
+import Home from '../pages/home/index'
+import Life from '../pages/demo/Life'
+export default class IRouter extends React.Component {
+    render() {
+        return (
+            <HashRouter>
+                <Route path="/login" component={Login} />
+                <Route path="/admin"
+                    render={() =>
+                        <Admin>
+                            <Route path="/admin/button" component={Home}></Route>
+                            <Route path="/life" component={Life}></Route>
+                        </Admin>
+                    }
+                />
+            </HashRouter>
+        )
+    }
+}
+```
