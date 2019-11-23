@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
 ## Available Scripts
 
 In the project directory, you can run:
@@ -70,8 +67,6 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/tr
 =======
 # react-antd
 学习react使用antd
-
->>>>>>> 1f7dd71c955c7e9b375f9687b8eb100225aad694
 ### React-Router4.0的使用
 ```bash
 1、react-router
